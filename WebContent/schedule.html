@@ -9,12 +9,16 @@
 <script src='js/jquery-ui.custom.min.js'></script>
 <script src='js/fullcalendar.min.js'></script>
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-
-<link rel="stylesheet" href="css/main/skel.css" />
-<link rel="stylesdheet" href="css/main/style.css" />
-<link rel="stylesheet" href="css/main/style-xlarge.css" />
 <script src="js/skel.min.js"></script>
 <script src="js/init.js"></script>
+<script src="js/skel-layers.min.js"></script>
+
+<noscript>
+	<link rel="stylesheet" href="css/main/skel.css" />
+	<link rel="stylesdheet" href="css/main/style.css" />
+	<link rel="stylesheet" href="css/main/style-xlarge.css" />
+</noscript>
+
 
 <script>
 	function initialize() {
@@ -126,10 +130,12 @@
 	}
 	
 	#map_canvas {
+		top : 50px;
 		width: 400px;
 		height: 400px;
 		left: 60px;
-		boarder : 1px solid skyblue;
+		boarder : 1px solid #ccc;
+		background: #eee;
 	}
 	
 	.schedule-image {
