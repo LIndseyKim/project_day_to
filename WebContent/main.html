@@ -9,113 +9,87 @@
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 		
 		<noscript>
 			<link rel="stylesheet" href="css/main/skel.css" />
 			<link rel="stylesdheet" href="css/main/style.css" />
 			<link rel="stylesheet" href="css/main/style-xlarge.css" />
 		</noscript>
-		
-		<script type="text/javascript">
-		    $(document).ready(function() {
-		      $("#loginButton").click(function() {
-		    	// Getting the variable's value from a link 
-		  		var loginBox = $(this).attr('href');
-		    	
-		  		//Fade in the Popup and add close button
-		  		$(loginBox).fadeIn();
-		  		
-		  		/* $(loginBox).css({ 
-		  			'margin-top' : -200,
-		  			'margin-left' : -150
-		  		}); */
-		  		
-		  		// Add the mask to body
-				$('body').append('<div id="mask"></div>');
-				$('#mask').fadeIn();
-				
-				return false;
-		      });
-		      /* $('#submit').click(function() {
-		        $('#wrapper').hide();
-		      }); */
-		    });
-	 	</script>
-	</head>
 
-<body id="top">
+	<body id="top">
 		<!-- Header -->
-			<header id="header" class="skel-layers-fixed">
-				<a href="main.html"><img src="images/logo.png" width="100px" height="50px"/></a>
-				<!-- <h1><a href="#">Day-To</a></h1> -->
-				<nav id="nav">
-					<ul>
-						<li><a href="main.html">Home</a></li>
-						<li><a href="#">Schedule</a></li>
-						<li><a href="blog.html">Blog</a></li>
-						<li><a href="#">Search</a><li>
-						<li><a href="#">Admin</a><li>
-						<li><a id="loginButton" href="login.html#wrapper" class="button special">Login</a></li>
-					</ul>
-				</nav><!-- nav -->
-			</header> <!-- Header -->
+		<header id="header" class="skel-layers-fixed">
+			<!-- <a href="main.html"><img src="images/logo.png" width="100px" height="50px"/></a> -->
+			<h1><a href="main.html">Day-To</a></h1>
+			<nav id="nav">
+				<ul>
+					<li><a href="main.html">Home</a></li>
+					<li><a href="schedule.html">Schedule</a></li>
+					<li><a href="blog.html">Blog</a></li>
+					<li><a href="#">Search</a><li>
+					<li><a href="#">Admin</a><li>
+					<li><a id="loginButton" href="login.html" class="button special">Login</a></li>
+				</ul>
+			</nav><!-- nav -->
+		</header> <!-- Header -->
+		
+		<!-- Banner -->
+		<section id="banner">
+			<div class="inner">
+				<h2>Day-To</h2>
+				<p>일정관리 웹 어플리케이션 <a href="#">2528</a></p>
+				<ul class="actions">
+					<!-- <li><a href="#content" class="button big special">Sign Up</a></li> -->
+					<li><a href="#elements" class="button big alt">Learn More</a></li>
+				</ul>
+			</div>
+		</section>
 			
-			<!-- Banner -->
-			<section id="banner">
-				<div class="inner">
-					<h2>Day-To</h2>
-					<p>일정관리 웹 어플리케이션 <a href="#">2528</a></p>
-					<ul class="actions">
-						<!-- <li><a href="#content" class="button big special">Sign Up</a></li> -->
-						<li><a href="#elements" class="button big alt">Learn More</a></li>
-					</ul>
-				</div>
-			</section>
-			
-			<!-- Footer -->
-			<footer id="footer">
-				<div class="container">
-					<div class="row double">
-						<div class="6u">
-							<div class="row collapse-at-2">
-								<div class="6u">
-									<h3>공지사항</h3>
-									<ul class="alt">
-										<li><a href="#">공지사항1</a></li>
-										<li><a href="#">공지사항2</a></li>
-										<li><a href="#">공지사항3</a></li>
-										<li><a href="#">공지사항4</a></li>
-									</ul>
-								</div>
-								<div class="6u">
-									<h3>Faucibus</h3>
-									<ul class="alt">
-										<li><a href="#">Nascetur nunc varius</a></li>
-										<li><a href="#">Vis faucibus sed tempor</a></li>
-										<li><a href="#">Massa amet lobortis vel</a></li>
-										<li><a href="#">Nascetur nunc varius</a></li>
-									</ul>
-								</div>
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="container">
+				<div class="row double">
+					<div class="6u">
+						<div class="row collapse-at-2">
+							<div class="6u">
+								<h3>공지사항</h3>
+								<ul class="alt">
+									<li><a href="#">공지사항1</a></li>
+									<li><a href="#">공지사항2</a></li>
+									<li><a href="#">공지사항3</a></li>
+									<li><a href="#">공지사항4</a></li>
+								</ul>
+							</div>
+							<div class="6u">
+								<h3>Faucibus</h3>
+								<ul class="alt">
+									<li><a href="#">Nascetur nunc varius</a></li>
+									<li><a href="#">Vis faucibus sed tempor</a></li>
+									<li><a href="#">Massa amet lobortis vel</a></li>
+									<li><a href="#">Nascetur nunc varius</a></li>
+								</ul>
 							</div>
 						</div>
-						<div class="6u">
-							<h2>Aliquam Interdum</h2>
-							<p>Blandit nunc tempor lobortis nunc non. Mi accumsan. Justo aliquet massa adipiscing cubilia eu accumsan id. Arcu accumsan faucibus vis ultricies adipiscing ornare ut. Mi accumsan justo aliquet.</p>
-							<ul class="icons">
-								<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-								<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
-							</ul>
-						</div>
 					</div>
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li>
-						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
-						<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
-					</ul>
+					<div class="6u">
+						<h2>Aliquam Interdum</h2>
+						<p>Blandit nunc tempor lobortis nunc non. Mi accumsan. Justo aliquet massa adipiscing cubilia eu accumsan id. Arcu accumsan faucibus vis ultricies adipiscing ornare ut. Mi accumsan justo aliquet.</p>
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
+						</ul>
+					</div>
 				</div>
-			</footer>
+				<ul class="copyright">
+					<li>&copy; Untitled. All rights reserved.</li>
+					<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
+					<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
+				</ul>
+			</div>
+		</footer>
 	</body>
 </html>

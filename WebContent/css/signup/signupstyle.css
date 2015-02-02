@@ -106,7 +106,7 @@ HEADER
 *******************/
 
 .signup-form .header {
-	padding: 40px 30px 30px 30px;
+	padding: 40px 30px 15px 30px;
 }
 
 .signup-form .header h1 {
@@ -139,7 +139,7 @@ CONTENT
 	width: 188px;
 	padding: 15px 25px;
 	
-	margin-top: 25px;
+	margin-top: 10px;
 	
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-weight: 400;
@@ -189,7 +189,7 @@ FOOTER
 *******************/
 
 .signup-form .footer {
-	padding: 25px 30px 40px 30px;
+	padding: 25px 30px 25px 30px;
 	overflow: auto;
 	
 	background: #d4dedf;
