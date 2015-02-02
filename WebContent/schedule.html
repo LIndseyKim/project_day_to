@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset='utf-8' />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href='css/fullcalendar/fullcalendar.css' rel='stylesheet' />
 <link href='css/fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
 <script src='js/moment.min.js'></script>
 <script src='js/jquery.min.js'></script>
 <script src='js/jquery-ui.custom.min.js'></script>
 <script src='js/fullcalendar.min.js'></script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
 <link rel="stylesheet" href="css/main/skel.css" />
 <link rel="stylesdheet" href="css/main/style.css" />
@@ -16,6 +17,24 @@
 <script src="js/init.js"></script>
 
 <script>
+	function initialize() {
+	    var myLatlng = new google.maps.LatLng(37.5647,
+	  		  126.9769);
+	    var mapOptions = {
+	       zoom : 15,
+	       center : myLatlng,
+	       mapTypeId : google.maps.MapTypeId.ROADMAP
+	    }
+	    var map = new google.maps.Map(document.getElementById('map_canvas'),
+	          mapOptions);
+  	            
+	    var marker = new google.maps.Marker({ 
+            position: myLatlng, 
+            map: map, 
+            title: "서울시청" 
+}); 
+	}
+	
 	$(document).ready(function() {
 		/* initialize the external events
 		-----------------------------------------------------------------*/
@@ -43,19 +62,16 @@
 				center: 'title',
 				right: 'next'
 			},
+			height : 800,
 			editable: true,
 			droppable: true, // this allows things to be dropped onto the calendar
 			drop: function() {
-				// is the "remove after drop" checkbox checked?
-				if ($('#drop-remove').is(':checked')) {
-					// if so, remove the element from the "Draggable Events" list
-					$(this).remove();
-				}
+				$(this).remove();
 			}
 		});
 	});
-
 </script>
+
 <style>
 	#schedule-body {
 		float : left;
@@ -67,18 +83,19 @@
 		
 	#wrap {
 		width: 1100px;
-		margin: 0 auto;
+		margin: 20px 20px;
 	}
 		
 	#external-events {
 		position : relative;
-		left : 50px;
+		left : 30px;
 		float: left;
-		width: 150px;
+		width: 300px;
+		height: 800px;
 		padding: 0 10px;
 		border: 1px solid #ccc;
 		background: #eee;
-		text-align: left;
+		text-align: center;
 	}
 		
 	#external-events h4 {
@@ -105,12 +122,26 @@
 
 	#calendar {
 		float: left;
-		width: 450px;
+		width: 400px;
+	}
+	
+	#map_canvas {
+		width: 400px;
+		height: 400px;
+		left: 60px;
+		boarder : 1px solid skyblue;
+	}
+	
+	.schedule-image {
+		padding-top : 5px;
+		display: block;
+		width: 200px;
+		height: 100px;
 	}
 
 </style>
 </head>
-<body id = "schedule-body">
+<body id = "schedule-body" onload="initialize()">
 	<!-- Header -->
 	<header id="header" class="skel-layers-fixed">
 		<!-- <a href="main.html"><img src="images/logo.png" width="100px" height="50px"/></a> -->
@@ -132,16 +163,25 @@
 		<div id='calendar'></div>
 		
 		<div id='external-events'>
-			<h4>Draggable Events</h4>
-			<div class='fc-event'>My Event 1</div>
-			<div class='fc-event'>My Event 2</div>
-			<div class='fc-event'>My Event 3</div>
-			<div class='fc-event'>My Event 4</div>
-			<div class='fc-event'>My Event 5</div>
+			<h4>Place</h4>
+			<div class='fc-event' align="center">
+				<img class="schedule-image" src="images/blog/pic01.jpg" alt="" />
+				장소 1
+			</div>
+			<div class='fc-event' align="center">
+				<img class="schedule-image" src="images/blog/pic02.jpg" alt="" />
+				장소 2
+			</div>
+			<div class='fc-event' align="center">
+				<img class="schedule-image" src="images/blog/pic03.jpg" alt="" />
+				장소 3
+			</div>
+			<div class='fc-event' align="center">...</div>
 		</div>
-
+		
+		<div id="map_canvas"></div>
+		
 		<div style='clear:both'></div>
-
 	</div>
 </body>
 </html>
